@@ -7,4 +7,5 @@ This project aims to improve our ability to manipulate data for prediction, clas
 Google collab will be used as it allows for multiple people to work on the same code document at the same time. It also comes with many libraries such as tensorflow already installed. 
 
 Regression: https://colab.research.google.com/drive/1om8hKmLrR1n7f7wBh0IzIpERIUZqqsVz?usp=sharing
-Clustering: https://colab.research.google.com/drive/1DFVSTEo09-d5JJ4C_7zSv6wQkxWa2jGT?usp=sharing
+
+Clustering: https://colab.research.google.com/drive/1om8hKmLrR1n7f7wBh0IzIpERIUZqqsVz?usp=sharing
