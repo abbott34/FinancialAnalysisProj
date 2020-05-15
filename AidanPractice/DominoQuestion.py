@@ -19,32 +19,4 @@ ans = 2
 # Implementation 1
 def min_filps(a, b):
     # First I'm just going to find the most common number on a half of a domino
-    keys = [1, 2, 3, 4, 5, 6]
-    dict_keys_a = {k: 0 for k in keys}
-    dict_keys_b = {k: 0 for k in keys}
-    for i in range(len(a)):
-        dict_keys_a[i+1] += 1
-        dict_keys_a[i + 1] += 1
-
-
-class Solution(object):
-    def reverse(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
-        num = 0
-        neg_flag = False
-        if x < 0:
-            neg_flag = True
-        while x != 0:
-            num *= 10
-            num += x % 10
-            x /= 10
-        if neg_flag:
-            return num * -1
-        return num
-a = Solution()
-print(a.reverse(321))
-
-while !(1 < 5):
+    
