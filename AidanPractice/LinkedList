@@ -12,12 +12,14 @@ def add_node(head_node, val):
     new_node.prev = head_node
     head_node.next = new_node
 
+
 def print_linked_list(node):
     while node != None:
         print(node.value, end="")
         node = node.next
         print(" - ", end="")
     print("None")
+
 
 def remove_node(node, val):
     prev_node = None
@@ -42,6 +44,7 @@ add_node(head, 50)
 # remove_node(head, 20)
 print_linked_list(head)
 
+
 def reverse_doubly_linked_list(head_node):
     size_list = 1
     lst_of_nodes = [head_node]
@@ -60,17 +63,75 @@ def reverse_doubly_linked_list(head_node):
             node.next = lst_of_nodes[i - 1]
             node.prev = None
             continue
-        node.next = lst_of_nodes[i-1]
-        node.prev = lst_of_nodes[i+1]
+        node.next = lst_of_nodes[i - 1]
+        node.prev = lst_of_nodes[i + 1]
     return lst_of_nodes[len(lst_of_nodes) - 1]
+
 
 new_head = reverse_doubly_linked_list(head)
 print_linked_list(new_head)
+
 
 class Treenode:
     def __init__(self, data):
         self.left = None
         self.right = None
         self.data = data
+
     def describe(self):
         print(f"Data: {self.data}\nLeft: {self.left}\nRight: {self.right}")
+
+
+def add_to_bst(root, node):
+    if root is None:
+        root = node
+    else:
+        if node.data < root.data:
+            if root.left is None:
+                root.left = node
+            else:
+                add_to_bst(root.left, node)
+        if node.data > root.data:
+            if root.right is None:
+                root.right = node
+            else:
+                add_to_bst(root.right, node)
+
+
+def print_bst_postorder(root):
+    if root.left != None:
+        print_bst_postorder(root.left)
+    if root.right != None:
+        print_bst_postorder(root.right)
+    root.describe()
+
+
+def search(root, data):
+    if root is None:
+        print("Could not find data")
+    if root.data == data:
+        print(f"Found the data at node: {root}")
+        return root
+    if data < root.data:
+        search(root.left, data)
+    else:
+        search(root.right, data)
+
+
+def remove(root, data):
+    if search(root, data) is None:
+        print("Data not in tree")
+    else:
+        print("ddddddddddddddddddddddd")
+        root = None
+
+
+a = Treenode(7)
+b = Treenode(3)
+c = Treenode(10)
+#
+add_to_bst(a, b)
+add_to_bst(a, c)
+# print_bst_postorder(a)
+
+remove(a, 10)
